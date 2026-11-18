@@ -1,0 +1,29 @@
+# ==========================================
+# GBANK API — Requisições de Teste
+# ==========================================
+
+@baseUrl = http://localhost:8080
+
+### 📋 Cadastrar novo usuário
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "nome": "João",
+  "sobrenome": "Pereira",
+  "email": "joao.pereira@exemplo.com"
+}
+
+### 📋 Listar todos os usuários
+GET {{baseUrl}}/api/users
+Accept: application/json
+
+### 📋 Cadastro com dados inválidos (teste de validação)
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "nome": "",
+  "sobrenome": "Silva",
+  "email": "email-invalido"
+}
